@@ -46,7 +46,9 @@ export default function MessageInput({ chatId }: MessageInputProps) {
           console.log("Starting image upload...", { selectedImage, chatId });
 
           const response = await fetch(
-            "http://localhost:5000/api/upload-image",
+            `${
+              process.env.NEXT_PUBLIC_SOCKET_URL || "http://localhost:5000"
+            }/api/upload-image`,
             {
               method: "POST",
               headers: {

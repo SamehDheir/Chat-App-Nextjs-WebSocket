@@ -1,0 +1,3 @@
+# Render.com Deployment
+
+web: node index.js

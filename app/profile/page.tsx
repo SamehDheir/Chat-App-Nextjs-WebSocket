@@ -67,13 +67,18 @@ export default function ProfilePage() {
         formData.append("avatar", selectedFile);
       }
 
-      const response = await fetch("http://localhost:5000/api/profile/update", {
-        method: "PUT",
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-        body: formData,
-      });
+      const response = await fetch(
+        `${
+          process.env.NEXT_PUBLIC_SOCKET_URL || "http://localhost:5000"
+        }/api/profile/update`,
+        {
+          method: "PUT",
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+          body: formData,
+        }
+      );
 
       if (response.ok) {
         const data = await response.json();
