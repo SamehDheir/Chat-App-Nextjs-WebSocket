@@ -5,7 +5,6 @@ A feature-rich, real-time chat application built with Next.js, Socket.io, and Mo
 ## ✨ New Features Added
 
 ### 🎨 Enhanced User Experience
-
 - **Dark/Light Mode Toggle**: Switch between themes with persistent preferences
 - **Emoji Picker**: Complete emoji selection with categories and search
 - **Image Sharing**: Upload and share images with preview and full-screen view
@@ -13,7 +12,6 @@ A feature-rich, real-time chat application built with Next.js, Socket.io, and Mo
 - **Settings Page**: Comprehensive settings for notifications, privacy, and preferences
 
 ### 🖼️ Image & Media Support
-
 - **Image Upload**: Share photos with captions
 - **Image Preview**: Thumbnail preview before sending
 - **Full-Screen View**: Click images to view in full screen
@@ -21,14 +19,12 @@ A feature-rich, real-time chat application built with Next.js, Socket.io, and Mo
 - **Multiple Formats**: Support for all common image formats
 
 ### 🎭 Theme & Customization
-
 - **System Theme Detection**: Automatically detect user's preferred theme
 - **Persistent Settings**: Theme preference saved to localStorage
 - **Dark Mode UI**: All components support dark mode styling
 - **Smooth Transitions**: Animated theme switching
 
 ### 👤 Advanced Profile Management
-
 - **Avatar Upload**: Upload custom profile pictures
 - **Profile Information**: Bio, phone, location, and join date
 - **Edit Mode**: In-place editing with save/cancel options
@@ -37,14 +33,12 @@ A feature-rich, real-time chat application built with Next.js, Socket.io, and Mo
 ## 🚀 Core Features
 
 ### Authentication & Security
-
 - **User Registration & Login**: Secure authentication with JWT tokens
 - **Password Hashing**: Bcrypt encryption for user passwords
 - **Protected Routes**: Authentication middleware for secure access
 - **Session Management**: Persistent login with token validation
 
 ### Real-time Messaging
-
 - **Instant Messaging**: Real-time message delivery using Socket.io
 - **Private Chats**: One-on-one conversations between users
 - **Group Chats**: Create and manage group conversations
@@ -55,7 +49,6 @@ A feature-rich, real-time chat application built with Next.js, Socket.io, and Mo
 - **Emoji Support**: Rich emoji picker with search and categories
 
 ### User Experience
-
 - **Responsive Design**: Mobile-first approach with Tailwind CSS
 - **Modern UI**: Clean, intuitive interface with smooth animations
 - **Theme Support**: Dark and light mode with system detection
@@ -65,7 +58,6 @@ A feature-rich, real-time chat application built with Next.js, Socket.io, and Mo
 - **Chat Management**: Create new chats, view chat history
 
 ### Technical Features
-
 - **Database**: MongoDB with Mongoose ODM
 - **File Upload**: Multer for image handling and storage
 - **API**: RESTful endpoints for all operations
@@ -76,7 +68,6 @@ A feature-rich, real-time chat application built with Next.js, Socket.io, and Mo
 ## 🛠️ Technology Stack
 
 ### Frontend
-
 - **Next.js 16**: React framework with App Router
 - **TypeScript**: Type-safe JavaScript
 - **Tailwind CSS**: Utility-first CSS framework with dark mode
@@ -86,7 +77,6 @@ A feature-rich, real-time chat application built with Next.js, Socket.io, and Mo
 - **React Context**: State management for auth and themes
 
 ### Backend
-
 - **Node.js**: JavaScript runtime
 - **Express.js**: Web application framework
 - **Socket.io**: Real-time bidirectional communication
@@ -99,20 +89,17 @@ A feature-rich, real-time chat application built with Next.js, Socket.io, and Mo
 ## 📦 Installation
 
 ### Prerequisites
-
 - Node.js (v18 or higher)
 - MongoDB (local installation or MongoDB Atlas)
 - npm or yarn package manager
 
 ### Clone the Repository
-
 ```bash
 git clone <repository-url>
 cd next_chat
 ```
 
 ### Install Dependencies
-
 ```bash
 # Install main project dependencies
 npm install
@@ -126,14 +113,12 @@ cd ..
 ### Environment Configuration
 
 Create a `.env.local` file in the root directory:
-
 ```env
 NEXT_PUBLIC_API_URL=http://localhost:5000
 NEXT_PUBLIC_SOCKET_URL=http://localhost:5000
 ```
 
 Create a `.env` file in the `server` directory:
-
 ```env
 PORT=5000
 MONGODB_URI=mongodb://localhost:27017/nextchat
@@ -146,13 +131,11 @@ CLIENT_URL=http://localhost:3000
 ### Database Setup
 
 #### Option 1: Local MongoDB
-
 1. Install MongoDB on your system
 2. Start MongoDB service
 3. The application will create the database automatically
 
 #### Option 2: MongoDB Atlas (Recommended)
-
 1. Create a MongoDB Atlas account
 2. Create a new cluster
 3. Get your connection string
@@ -161,7 +144,6 @@ CLIENT_URL=http://localhost:3000
 ## 🚀 Running the Application
 
 ### Development Mode
-
 ```bash
 # Start both frontend and backend
 npm run dev
@@ -175,7 +157,6 @@ npm run dev:server
 ```
 
 ### Production Mode
-
 ```bash
 # Build the application
 npm run build
@@ -194,7 +175,6 @@ npm run start
 ## 📱 Usage Guide
 
 ### Getting Started
-
 1. **Register**: Create a new account with username, email, and password
 2. **Login**: Sign in with your credentials
 3. **Profile Setup**: Add your bio, avatar, and profile information
@@ -205,33 +185,28 @@ npm run start
 ### New Features Guide
 
 #### Image Sharing
-
 - Click the **+** button in message input
 - Select an image (max 5MB)
 - Add an optional caption
 - Send the image message
 
 #### Emoji Picker
-
 - Click the **😊** button in message input
 - Browse categories or search for emojis
 - Click any emoji to add it to your message
 
 #### Dark/Light Mode
-
 - Click the **🌙/☀️** button in the header
 - Theme preference is automatically saved
 - All components adapt to the selected theme
 
 #### Profile Management
-
 - Click your avatar → **Profile**
 - Edit your information in-place
 - Upload a custom avatar
 - Save changes with the **Save** button
 
 #### Settings
-
 - Click your avatar → **Settings**
 - Configure notifications, privacy, and preferences
 - Toggle various features on/off
@@ -240,39 +215,33 @@ npm run start
 ## 🔧 API Endpoints
 
 ### Authentication
-
 - `POST /api/auth/register` - User registration
 - `POST /api/auth/login` - User login
 - `GET /api/auth/me` - Get current user info
 
 ### Users
-
 - `GET /api/user/search` - Search users
 - `GET /api/user/online` - Get online users
 
 ### Chats
-
 - `GET /api/chat` - Get user's chats
 - `POST /api/chat` - Create new chat
 - `GET /api/chat/:id/messages` - Get chat messages
 - `POST /api/chat/:id/messages` - Send message
 
 ### File Upload (New)
-
 - `POST /api/upload-image` - Upload image for messages
 - `GET /api/uploads/:filename` - Serve uploaded images
 
 ## 🎯 Socket Events
 
 ### Client to Server
-
 - `join_chat` - Join a chat room
 - `leave_chat` - Leave a chat room
 - `send_message` - Send a new message
 - `typing` - Send typing indicator
 
 ### Server to Client
-
 - `message_received` - New message in chat
 - `user_typing` - User typing indicator
 - `user_online` - User came online
@@ -281,21 +250,17 @@ npm run start
 ## 🎨 Customization
 
 ### Theme Customization
-
 The application supports full dark/light mode theming:
-
 - Configure in `tailwind.config.js`
 - Dark mode classes: `dark:bg-gray-800`, `dark:text-white`
 - Theme context in `contexts/ThemeContext.tsx`
 
 ### Styling
-
 - Colors and themes in `tailwind.config.js`
 - Global styles in `app/globals.css`
 - Component-specific styles with Tailwind classes
 
 ### Adding Features
-
 1. Update database models in `server/models/`
 2. Create API routes in `server/routes/`
 3. Add frontend components in `components/`
@@ -315,25 +280,21 @@ The application supports full dark/light mode theming:
 ### Common Issues
 
 **Image Upload Issues**
-
 - Check file size (max 5MB)
 - Ensure uploads folder exists in server directory
 - Verify multer configuration
 
 **Theme Issues**
-
 - Clear localStorage if theme stuck
 - Check dark mode classes in Tailwind config
 - Verify theme context provider wrapping
 
 **Connection Issues**
-
 - Ensure MongoDB is running
 - Check environment variables
 - Verify port availability (3000, 5000)
 
 **Socket.io Issues**
-
 - Check CORS configuration
 - Verify socket URL in frontend
 - Ensure both client and server are running
@@ -379,7 +340,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **Built with ❤️ using Next.js, Socket.io, MongoDB, and modern web technologies**
 
 ### 📊 Project Stats
-
 - **Frontend Components**: 15+ React components
 - **Backend Routes**: 10+ API endpoints
 - **Database Models**: 4 MongoDB schemas

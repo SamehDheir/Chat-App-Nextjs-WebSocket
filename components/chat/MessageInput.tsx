@@ -20,7 +20,8 @@ export default function MessageInput({ chatId }: MessageInputProps) {
   const { sendMessage, sendTyping } = useChat();
   const inputRef = useRef<HTMLInputElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
-  const typingTimeoutRef = useRef<NodeJS.Timeout>();
+  // use ReturnType<typeof setTimeout> for cross-environment compatibility (browser/node)
+  const typingTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     if (inputRef.current) {
