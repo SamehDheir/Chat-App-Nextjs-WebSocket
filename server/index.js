@@ -25,6 +25,7 @@ const io = socketIo(server, {
 const allowedOrigins = [
   process.env.CLIENT_URL || "http://localhost:3000",
   "http://localhost:3000",
+  "https://chat-app-nextjs-web-socket.vercel.app",
   "https://*.vercel.app",
 ];
 
@@ -34,13 +35,10 @@ app.use(
       // Allow requests with no origin (mobile apps, etc.)
       if (!origin) return callback(null, true);
 
-      // Check if origin is allowed
+      // Check if origin is allowed or if it's a vercel app
       if (
-        allowedOrigins.some(
-          (allowed) =>
-            allowed === origin ||
-            (allowed.includes("*") && origin.includes(".vercel.app"))
-        )
+        allowedOrigins.includes(origin) ||
+        (origin && origin.endsWith(".vercel.app"))
       ) {
         return callback(null, true);
       }
@@ -53,6 +51,8 @@ app.use(
       callback(new Error("Not allowed by CORS"));
     },
     credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With"],
   })
 );
 app.use(express.json());
